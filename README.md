@@ -20,7 +20,6 @@ Sistema web desenvolvido com o objetivo de ajudar usuários a visualizarem o tem
 - HTML5
 - CSS3
 - JavaScript
-- Leaflet.js para renderização de mapas
 
 ## Estrutura do Projeto
 

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa de Clínicas</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+    }
+
+    #map {
+      height: 50vh;
+      width: 100%;
+    }
+
+    .clinicas-container {
+      background: #0439d9;
+      padding: 20px;
+      border-radius: 25px 25px 0 0;
+      margin-top: -30px;
+    }
+
+    .card {
+      background: #6fff6f;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .card:nth-child(2) {
+      background: #ff8a2a;
+    }
+
+    .card-title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    
+    .footer {
+      text-align: center;
+      padding: 25px 0;
+    }
+    .home-icon {
+      width: 35px;
+      cursor: pointer;
+    }
+    .footer-text {
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+  <div class="clinicas-container">
+    <div class="card">
+      <div class="card-title">
+        <p>UPA Parque São Cristovão</p>
+        <span>😊</span>
+      </div>
+      <p>Horário: 6:30 - 18:00</p>
+      <p>Status: vazia</p>
+      <p>Tempo Estimado: 5 minutos</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <p>USF Parque São Cristovão</p>
+        <span>🙂</span>
+      </div>
+      <p>Horário: 6:30 - 18:00</p>
+      <p>Status: pouca cheia</p>
+      <p>Tempo Estimado: 30 minutos</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <img src="imagens/logo-sus.png" class="home-icon" onclick="window.location='home.html'">
+    <p class="footer-text">Início</p>
+  </div>
+
+  <script>
+
+    const map = L.map("map").setView([-12.9764, -38.4814], 14); 
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap contributors",
+    }).addTo(map);
+
+
+    const locais = [
+      {
+        nome: "UPA Parque São Cristovão",
+        coords: [-12.975, -38.482],
+        cor: "green"
+      },
+      {
+        nome: "USF Parque São Cristovão",
+        coords: [-12.978, -38.480],
+        cor: "orange"
+      }
+    ];
+
+    locais.forEach(local => {
+      L.marker(local.coords, {
+        icon: L.divIcon({
+          className: "custom-marker",
+          html: `<div style="background:${local.cor}; width:20px; height:20px; border-radius:50%;"></div>`
+        })
+      })
+      .addTo(map)
+      .bindPopup(`<b>${local.nome}</b><br><button onclick="alert('Abrir detalhes');">Ver detalhes</button>`);
+    });
+  </script>
+</body>
+</html>

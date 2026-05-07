@@ -1,0 +1,102 @@
+@media (max-width: 480px) {
+  h2 { font-size: 22px; }
+  .logo { width: 60px; }
+  .btn-cadastro button { width: 55px; height: 55px; }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 20px;
+}
+
+.logo {
+    width: 70px;
+    margin-top: 20px;
+}
+
+.cadastro-container {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 30px;
+}
+
+h2 {
+  color: #ff2d2d;
+  font-size: 26px;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 25px;
+  padding: 6px 0;
+}
+
+.input-group img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.termos {
+  font-size: 13px;
+  color: #0645ad;
+  margin: 10px 0 40px;
+}
+
+.btn-cadastro {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.btn-cadastro button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #003adb;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #b2b2b2;
+}
+
+.login-link a {
+  color: #ff2d2d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}  

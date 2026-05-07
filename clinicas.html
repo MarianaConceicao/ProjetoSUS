@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="imagens/logosus.png">
+    <title>Filas SUS - Tempo de Espera Real</title>
+    <link rel=stylesheet href=css/clinicas.css>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header role="banner">
+    <div class="header-content-flex">
+        <img src="imagens/imgsus.svg" alt="Logo do SUS" class="logo-sus">
+        
+        <div class="header-text">
+            <h1>Filas SUS</h1>
+            <p>Que seja pública, gratuita, universal e de qualidade!</p>
+        </div>
+    </div>
+</header>
+
+    <main class="container" role="main">
+
+        <section id="controles-busca" aria-label="Opções de Busca e Filtro">
+            <div class="input-group">
+                <label for="busca-unidade">Buscar Unidade ou Endereço</label>
+                <input type="search" id="busca-unidade" placeholder="Ex: UBS Central ou 24h">
+            </div>
+
+            <div class="input-group">
+                <label for="ordenar-por">Ordenar por:</label>
+                <select id="ordenar-por">
+                    <option value="espera-menor">Menor Tempo de Espera</option>
+                    <option value="distancia-menor">Menor Distância</option>
+                </select>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="lista-unidades" aria-live="polite" aria-label="Lista de Unidades de Saúde e Tempos de Espera">
+
+            <article class="unidade" data-id="1" data-lotacao="baixa">
+
+                <div class="status-fila">
+                    <span class="icone-status" role="img" aria-label="Fila Baixa"></span>
+                    <p class="tempo-espera">Espera Estimada: 15 minutos</p>
+                    <span class="label-lotacao">Lotação Baixa</span>
+                </div>
+
+                <div class="info-detalhes">
+                    <h2>UBS Central</h2>
+                    <p class="distancia" aria-label="Distância">2.5 km</p>
+                    <p class="horario" aria-label="Horário de Funcionamento">Aberto até 18h (Ver horários de
+                        funcionamento)</p>
+                    <button class="detalhes-btn" aria-expanded="false" aria-controls="historico-1">Detalhes e
+                        Histórico</button>
+                    <div id="historico-1" class="historico" hidden>
+                        <p>Últimos tempos: 20min (10h), 18min (9h).</p>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+<script src="js/clinicas.js"></script>
+      <div class="footer">
+    <img src="imagens/logo-sus.png" class="home-icon" onclick="window.location='home.html'">
+    <p class="footer-text">Início</p>
+  </div>
+</body>
+
+</html>
